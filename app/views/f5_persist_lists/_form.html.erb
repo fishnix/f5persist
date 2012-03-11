@@ -1,0 +1,38 @@
+<h2>Upload a List of F5 Persistence Records: </h2>
+<div class="span12">
+	<%= form_for :create, :url => { :action => :create }, :html => { :multipart => true } do |f| %>
+		<% if @f5_persist_list.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@f5_persist_list.errors.count, "error") %> prohibited this f5_persist_list from being saved:</h2>
+
+	      <ul>
+	      <% @f5_persist_list.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+  
+		<fieldset>
+			<div class="clearfix">
+				<%= f.label :name %>
+				<div class="input">
+			    	<%= f.text_field :name %>
+			  	</div>
+			</div>
+			
+			<div class="clearfix">
+				<%= f.label :file %>
+				<div class="input">
+			    	<%= f.file_field :file %>
+			  	</div>
+			</div>
+						
+		</fieldset>
+		<div class="clearfix">
+			<div class="input">
+		    	<%= f.submit "Save", :class => "btn primary" %> <%= link_to "Cancel", f5_persist_lists_path, :class => "btn" %>
+			</div>
+		</div>
+	 <% end %>
+</div>

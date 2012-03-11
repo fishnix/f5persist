@@ -1,0 +1,57 @@
+<%= form_for(@f5_persist_record) do |f| %>
+  <% if @f5_persist_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@f5_persist_record.errors.count, "error") %> prohibited this f5_persist_record from being saved:</h2>
+
+      <ul>
+      <% @f5_persist_record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :f5_persist_list_id %><br />
+    <%= f.number_field :f5_persist_list_id %>
+  </div>
+  <div class="field">
+    <%= f.label :tmm %><br />
+    <%= f.number_field :tmm %>
+  </div>
+  <div class="field">
+    <%= f.label :mode %><br />
+    <%= f.text_field :mode %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_area :value %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :virtual_name %><br />
+    <%= f.text_area :virtual_name %>
+  </div>
+  <div class="field">
+    <%= f.label :virtual_addr %><br />
+    <%= f.text_field :virtual_addr %>
+  </div>
+  <div class="field">
+    <%= f.label :node_addr %><br />
+    <%= f.text_field :node_addr %>
+  </div>
+  <div class="field">
+    <%= f.label :pool_name %><br />
+    <%= f.text_area :pool_name %>
+  </div>
+  <div class="field">
+    <%= f.label :client_adr %><br />
+    <%= f.text_field :client_adr %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

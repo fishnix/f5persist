@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>F5 persist list:</b>
+  <%= @f5_persist_record.f5_persist_list_id %>
+</p>
+
+<p>
+  <b>Tmm:</b>
+  <%= @f5_persist_record.tmm %>
+</p>
+
+<p>
+  <b>Mode:</b>
+  <%= @f5_persist_record.mode %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @f5_persist_record.value %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @f5_persist_record.age %>
+</p>
+
+<p>
+  <b>Virtual name:</b>
+  <%= @f5_persist_record.virtual_name %>
+</p>
+
+<p>
+  <b>Virtual addr:</b>
+  <%= @f5_persist_record.virtual_addr %>
+</p>
+
+<p>
+  <b>Node addr:</b>
+  <%= @f5_persist_record.node_addr %>
+</p>
+
+<p>
+  <b>Pool name:</b>
+  <%= @f5_persist_record.pool_name %>
+</p>
+
+<p>
+  <b>Client adr:</b>
+  <%= @f5_persist_record.client_adr %>
+</p>
+
+
+<%= link_to 'Edit', edit_f5_persist_record_path(@f5_persist_record) %> |
+<%= link_to 'Back', f5_persist_records_path %>

@@ -1,0 +1,41 @@
+<h1>Listing f5_persist_records</h1>
+
+<table>
+  <tr>
+    <th>F5 persist list</th>
+    <th>Tmm</th>
+    <th>Mode</th>
+    <th>Value</th>
+    <th>Age</th>
+    <th>Virtual name</th>
+    <th>Virtual addr</th>
+    <th>Node addr</th>
+    <th>Pool name</th>
+    <th>Client adr</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @f5_persist_records.each do |f5_persist_record| %>
+  <tr>
+    <td><%= f5_persist_record.f5_persist_list_id %></td>
+    <td><%= f5_persist_record.tmm %></td>
+    <td><%= f5_persist_record.mode %></td>
+    <td><%= f5_persist_record.value %></td>
+    <td><%= f5_persist_record.age %></td>
+    <td><%= f5_persist_record.virtual_name %></td>
+    <td><%= f5_persist_record.virtual_addr %></td>
+    <td><%= f5_persist_record.node_addr %></td>
+    <td><%= f5_persist_record.pool_name %></td>
+    <td><%= f5_persist_record.client_adr %></td>
+    <td><%= link_to 'Show', f5_persist_record %></td>
+    <td><%= link_to 'Edit', edit_f5_persist_record_path(f5_persist_record) %></td>
+    <td><%= link_to 'Destroy', f5_persist_record, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New F5 persist record', new_f5_persist_record_path %>

@@ -1,0 +1,25 @@
+<h1>Listing f5_persist_lists</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @f5_persist_lists.each do |f5_persist_list| %>
+  <tr>
+    <td><%= f5_persist_list.name %></td>
+    <td><%= f5_persist_list.content %></td>
+    <td><%= link_to 'Show', f5_persist_list %></td>
+    <td><%= link_to 'Edit', edit_f5_persist_list_path(f5_persist_list) %></td>
+    <td><%= link_to 'Destroy', f5_persist_list, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New F5 persist list', new_f5_persist_list_path %>

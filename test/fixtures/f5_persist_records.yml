@@ -1,0 +1,44 @@
+# == Schema Information
+#
+# Table name: f5_persist_records
+#
+#  id                 :integer         not null, primary key
+#  f5_persist_list_id :integer
+#  tmm                :integer
+#  mode               :string(255)
+#  value              :text
+#  age                :integer
+#  virtual_name       :text
+#  virtual_addr       :string(255)
+#  node_addr          :string(255)
+#  pool_name          :text
+#  client_adr         :string(255)
+#  created_at         :datetime        not null
+#  updated_at         :datetime        not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  f5_persist_list_id: 1
+  tmm: 1
+  mode: MyString
+  value: MyText
+  age: 1
+  virtual_name: MyText
+  virtual_addr: MyString
+  node_addr: MyString
+  pool_name: MyText
+  client_adr: MyString
+
+two:
+  f5_persist_list_id: 1
+  tmm: 1
+  mode: MyString
+  value: MyText
+  age: 1
+  virtual_name: MyText
+  virtual_addr: MyString
+  node_addr: MyString
+  pool_name: MyText
+  client_adr: MyString
