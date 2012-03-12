@@ -14,6 +14,7 @@ class F5PersistListsController < ApplicationController
   # GET /f5_persist_lists/1.json
   def show
     @f5_persist_list = F5PersistList.find(params[:id])
+    @f5_persist_records = @f5_persist_list.f5_persist_records
 
     respond_to do |format|
       format.html # show.html.erb
@@ -62,29 +63,14 @@ class F5PersistListsController < ApplicationController
      @data = F5PersistList.create(:name => list_name, :content => filedata)
           
      parse_persist_records(filedata).each do |c|
-       persistrecord = F5Persist.create(:f5persistlist_id => @data.id, :tmm => c[:tmm], :mode => c[:mode], :value => c[:value],
+       persistrecord = F5PersistRecord.create(:f5_persist_list_id => @data.id, :tmm => c[:tmm], :mode => c[:mode], :value => c[:value],
                                         :age => c[:age], :virtual_name => c[:virtual_name], :virtual_addr => c[:virtual_addr],
-                                        :node_addr => c[:node_addr], :pool_name => c[:pool_name], :client_aadr => c[:client_addr])
+                                        :node_addr => c[:node_addr], :pool_name => c[:pool_name], :client_addr => c[:client_addr])
      end
      
      redirect_to f5_persist_lists_path, :notice => 'Records successfully added.'
   end
 
-  # PUT /f5_persist_lists/1
-  # PUT /f5_persist_lists/1.json
-  def update
-    @f5_persist_list = F5PersistList.find(params[:id])
-
-    respond_to do |format|
-      if @f5_persist_list.update_attributes(params[:f5_persist_list])
-        format.html { redirect_to @f5_persist_list, notice: 'F5 persist list was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @f5_persist_list.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # DELETE /f5_persist_lists/1
   # DELETE /f5_persist_lists/1.json

@@ -12,7 +12,7 @@
 #  virtual_addr       :string(255)
 #  node_addr          :string(255)
 #  pool_name          :text
-#  client_adr         :string(255)
+#  client_addr        :string(255)
 #  created_at         :datetime        not null
 #  updated_at         :datetime        not null
 #

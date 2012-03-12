@@ -1,8 +1,9 @@
 F5persist::Application.routes.draw do
   
   root :to => 'f5_persist_lists#index'
-  resources :f5_persist_records
-  resources :f5_persist_lists
+  resources :f5_persist_lists do
+    resources :f5_persist_records
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

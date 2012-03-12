@@ -10,7 +10,7 @@ class CreateF5PersistRecords < ActiveRecord::Migration
       t.string :virtual_addr
       t.string :node_addr
       t.text :pool_name
-      t.string :client_adr
+      t.string :client_addr
 
       t.timestamps
     end

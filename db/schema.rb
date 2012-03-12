@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20120311153533) do
     t.string   "virtual_addr"
     t.string   "node_addr"
     t.text     "pool_name"
-    t.string   "client_adr"
+    t.string   "client_addr"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
