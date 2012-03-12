@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/fishnix/datatables.git
+  revision: 2015141c1ea807a00072b2166c47dba3c5519d88
+  specs:
+    datatables (1.0.0)
+      jquery-rails
+      rails (>= 3.0.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -121,6 +129,7 @@ PLATFORMS
 DEPENDENCIES
   annotate (~> 2.4.1.beta)
   coffee-rails (~> 3.2.1)
+  datatables!
   jquery-rails
   rails (= 3.2.2)
   sass-rails (~> 3.2.3)

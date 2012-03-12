@@ -2,36 +2,15 @@
 
 <p id="notice"><%= notice %></p>
 
-<table class="zebra-striped">
-	<thead>
-		<tr>
-			<th>TMM</th>
-			<th>Mode</th>
-			<th>Value</th>
-			<th>Age</th>
-			<th>Virtual Name</th>
-			<th>Virtual Addr</th>
-			<th>Node Addr</th>
-			<th>Pool Name</th>
-			<th>Client Addr</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @f5_persist_records.each do |f5pr| %>
-			<tr>
-				<td><%= f5pr.tmm %></td>
-				<td><%= f5pr.age  %></td>
-				<td><%= f5pr.mode  %></td>
-				<td><%= f5pr.value  %></td>
-				<td><%= f5pr.virtual_name %></td>
-				<td><%= f5pr.virtual_addr %></td>
-				<td><%= f5pr.node_addr %></td>
-				<td><%= f5pr.pool_name %></td>
-				<td><%= f5pr.client_addr %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
+<%= datatable('f5_persist_records', { :tmm => { :type => 'integer', :label => 'TMM'},
+																		 	:mode => { :type => 'string', :label => 'Mode'},
+																		 	:value => { :type => 'string', :label => 'Value'},
+																			:age => { :type => 'integer', :label => 'Age'},
+																			:virtual_name => { :type => 'string', :label => 'Virtual Name' },
+																			:virtual_addr => { :type => 'string', :label => 'Virtual Addr' },
+																			:node_addr => { :type => 'string', :label => 'Node Addr' },
+																			:pool_name => {:type => 'string', :label => 'Pool Name' },
+																			:client_addr => {:type => 'string', :label => 'Client Addr' }
+																	 	}) %>
 
-<%= link_to 'Edit', edit_f5_persist_list_path(@f5_persist_list) %> |
 <%= link_to 'Back', f5_persist_lists_path %>
