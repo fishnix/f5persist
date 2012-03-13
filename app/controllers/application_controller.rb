@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   def parse_persist_records(listdata)
-    regex =/^-+\s+TMM\s+(\d+)\s+Mode\s+(\w+)\s+Value\s+\"?(.*)\"?\s+Age\s+\(sec\.\)\s+(\d+)\s+Virtual\s+Name\s+(\S*)\s+Virtual\s+Addr\s+(\S*)\s+Node\s+Addr\s+(\S*)\s+Pool\s+Name\s+(\S*)\s+Client\s+Addr\s+(\S*)/
+    regex =/^-+\s+TMM\s+(\d+)\s+Mode\s+([a-zA-Z_-]+)\s+Value\s+\"?(.*)\"?\s+Age\s+\(sec\.\)\s+(\d+)\s+Virtual\s+Name\s+(\S*)\s+Virtual\s+Addr\s+(\S*)\s+Node\s+Addr\s+(\S*)\s+Pool\s+Name\s+(\S*)\s+Client\s+Addr\s+(\S*)/
     
     prs = Array.new
     
